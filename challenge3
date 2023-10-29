@@ -1,0 +1,16 @@
+object_1 = {"a":{"b":{"c":"d"}}}
+object_2 = {"x":{"y":{"z":"a"}}}
+
+def get_value(dict_object, key):
+  for k, v in dict_object.items():
+    if k == key:
+      print(v)
+    elif isinstance(v, dict):
+      get_value(v, key)
+    else:
+      print("Key not found")
+
+get_value (object_1, "a")
+get_value (object_2, "y")
+get_value (object_1, "c")
+get_value (object_2, "a")
